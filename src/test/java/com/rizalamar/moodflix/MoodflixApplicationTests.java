@@ -1,0 +1,13 @@
+package com.rizalamar.moodflix;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class MoodflixApplicationTests {
+
+	@Test
+	void contextLoads() {
+	}
+
+}
