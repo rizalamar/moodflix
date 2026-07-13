@@ -2,6 +2,7 @@ package com.rizalamar.moodflix.resolver;
 
 import com.rizalamar.moodflix.annotation.CurrentUser;
 import com.rizalamar.moodflix.domain.User;
+import com.rizalamar.moodflix.security.UserPrincipal;
 import org.jspecify.annotations.Nullable;
 import org.springframework.core.MethodParameter;
 import org.springframework.security.core.Authentication;
@@ -16,7 +17,7 @@ import org.springframework.web.method.support.ModelAndViewContainer;
 public class CurrentUserArgumentResolver implements HandlerMethodArgumentResolver {
     @Override
     public boolean supportsParameter(MethodParameter parameter) {
-        return parameter.getParameterType().equals(User.class) && parameter.hasParameterAnnotation(CurrentUser.class);
+        return parameter.getParameterType().equals(UserPrincipal.class) && parameter.hasParameterAnnotation(CurrentUser.class);
     }
 
     @Override
