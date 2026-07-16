@@ -1,14 +1,25 @@
 package com.rizalamar.moodflix.dto.weather;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Builder;
 
 import java.util.List;
 
 @Builder
 public record WeatherResponse(
-        List<Weather> weathers,
-        Main main
+        double lat,
+        double lon,
+        List<Data> data
 ) {
-    public record Weather(String main, String description){}
-    public record Main(double temp){}
+    public record Data(
+            double temp,
+
+            @JsonProperty("weather")
+            List<Weather> weathers
+    ){}
+
+    public record Weather(
+            String main,
+            String description
+    ){}
 }
