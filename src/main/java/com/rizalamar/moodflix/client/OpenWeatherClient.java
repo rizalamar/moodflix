@@ -28,7 +28,7 @@ public class OpenWeatherClient {
     public WeatherResponse getCurrentWeather(double lat, double lon){
         return restClient.get()
                 .uri(uriBuilder -> uriBuilder
-                        .path("/weather")
+                        .path("/data/4.0.onecall/current")
                         .queryParam("lat", lat)
                         .queryParam("lon", lon)
                         .queryParam("appid", apiKey)
