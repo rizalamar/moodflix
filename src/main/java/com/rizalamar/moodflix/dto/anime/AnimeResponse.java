@@ -22,7 +22,7 @@ public record AnimeResponse(
 
             Images images,
 
-            String sysnopsis,
+            String synopsis,
 
             Integer episodes,
 
