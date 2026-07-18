@@ -20,7 +20,7 @@ public class RecommendationService {
     private final JikanClient jikanClient;
     private final MoodMapper moodMapper;
 
-    public Object getDashboardRecommendations(double lat, double lon) {
+    public DashboardResponse getDashboardRecommendations(double lat, double lon) {
         // Get Weather
         WeatherResponse weather = weatherClient.getCurrentWeather(lat, lon);
         String weatherCondition = weather.data().getFirst().weathers().getFirst().main();
