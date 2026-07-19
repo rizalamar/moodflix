@@ -19,8 +19,11 @@ public class RecommendationService {
     private final TmdbClient tmdbClient;
     private final JikanClient jikanClient;
     private final MoodMapper moodMapper;
+    private final ValidationService validationService;
 
     public DashboardResponse getDashboardRecommendations(double lat, double lon) {
+        validationService.validateGeolocation(lat, lon);
+
         // Get Weather
         WeatherResponse weather = weatherClient.getCurrentWeather(lat, lon);
         String weatherCondition = weather.data().getFirst().weathers().getFirst().main();
